@@ -1,0 +1,63 @@
+{% include "header.html" %}
+
+
+
+<div class="container mx-auto px-4 mt-12">
+
+
+  
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for category,message in messages %}
+  <div class="container mx-auto px-4 mt-8">
+    <div class="bg-white-900 p-8 rounded-lg shadow-lg text-center">
+      <p class="text-white text-xl mb-4">{{ message | safe }}</p>
+      {% if compressed_file %}
+        <a href="{{ compressed_file }}" download class="bg-pink-500 text-white py-2 px-6 rounded-full hover:bg-pink-700 focus:outline-none transition duration-300">Download</a>
+      {% endif %}
+    </div>
+  </div>
+  
+  {% endfor %}
+{% endif %}
+{% endwith %}
+
+
+<br>
+
+
+
+<div class="container mx-auto px-4 mt-8">
+  <div class="bg-gray-900 text-white p-8 rounded-lg shadow-lg text-center">
+    <h1 class="text-3xl font-medium title-font mb-4 text-white">Convert your PDF & Images in your Desired Format & Download it</h1>
+    <p class="mx-auto leading-relaxed text-base text-white mb-8">Upload an image or PDF, choose the format, and convert it to your desired type.</p>
+
+    <form action="/convert" method="post" enctype="multipart/form-data">
+
+      <div class="mb-6">
+        <label for="formFile" class="block text-white text-sm font-medium mb-2">Upload Image or PDF</label>
+        <input type="file" id="formFile" multiple="multiple" name="file" class="w-full border border-gray-300 p-2 rounded focus:outline-none">
+      </div>
+
+      <div class="mb-6">
+        <label for="compressionQuality" class="block text-white text-sm font-medium mb-2">Convert To:</label>
+        <select name="operations" id="compressionQuality" class="w-full border border-black p-2 rounded focus:outline-none bg-black">
+          <option value="" disabled selected>Choose Conversion Type</option>
+          <option value="pdftodoc">PDF to Doc</option>
+          <option value="doctopdf">Doc to PDF</option>
+          <option value="imagetopdf">Image to PDF</option>
+          <option value="pdftoimage">PDF to Image</option>
+          <option value="mergepdf">Merge PDF</option>
+        </select>
+      </div>
+
+      <button type="submit" class="bg-pink-800 text-white py-2 px-6 rounded hover:bg-pink-600 focus:outline-none">Convert</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+<br> 

@@ -1,0 +1,143 @@
+
+{% include "header.html" %} 
+      
+     
+
+
+<section class="text-white bg-black body-font">
+
+    {% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category,message in messages %}
+
+        <div class="container mx-auto px-4">
+            <br> <br>
+            <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+
+                <div class="sm:w-1/2 mb-10 px-4 mx-auto text-center">
+                    <h2 class="title-font text-2xl font-medium text-white mt-6 mb-3">Original Image</h2>
+                    <div class="rounded-lg h-64 overflow-hidden border border-gray-300 mx-auto">
+                        <img alt="content" class="object-center h-full w-full" src="{{ og_image }}">
+                    </div>
+                    <p class="leading-relaxed text-base mt-4">Dimensions: {{ size }}<br>File Type: {{ extension }}</p>
+                </div>
+
+
+
+                <div class="sm:w-1/2 mb-10 px-4 mx-auto text-center">
+                    <h2 class="title-font text-2xl font-medium text-white mt-6 mb-3">Transformed Image</h2>
+                    <div class="rounded-lg h-64 overflow-hidden border border-gray-300 mx-auto">
+                        <img alt="content" class="object-center h-full w-full" src="{{ edited_image }}">
+                    </div>
+                    <p class="leading-relaxed text-base mt-4">Dimensions: {{ size }}<br>File Type: {{ extension }}</p>
+                </div>
+                
+
+
+            </div>
+            </div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center text-center">
+                <p class="leading-relaxed text-base mt-2">{{ message | safe }}</p>
+                <button
+                    class="mt-6 text-white bg-pink-800 border-0 py-2 px-5 focus:outline-none hover:bg-pink-600 rounded">
+                    <a href="{{ edited_image }}" download>Download</a>
+                </button>
+                <br>
+            </div>
+        </div>
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+  
+  
+
+<div class="flex flex-col text-center w-full mb-20">
+    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white text-gray-900 branding">Illuminate Your Social Media Presence with Our Image Editing Torch</h1>
+    <p class="lg:w-2/3 mx-auto leading-relaxed text-white text-base branding"> Elevate your social media game with our powerful Image Editing Torch. Upload images and PDFs, and let our cutting-edge software compress them without compromising quality. 
+        Stand out in the digital landscape like never before!
+    </p>
+  </div>
+
+
+
+
+ <form action="/edit" method="post" enctype="multipart/form-data" class="flex items-center justify-center h-screen flex-col space-y-4  ">
+
+       
+<div class="flex items-center justify-center w-full">
+    <label for="dropzone-file" class="flex flex-col items-center justify-center w-80 h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+            </svg>
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+        </div>
+        <input id="dropzone-file" name="file" type="file" class="hidden" />
+    </label>
+</div> 
+
+
+        <div class="relative h-10 w-72 min-w-[200px]">
+            <select name="operations"
+                class="peer h-full w-full rounded-[7px] border border-blue-gray-900 border-t-transparent bg-black text-white px-3 py-2.5 font-sans text-sm font-normal outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+                <option value="sketch">Make a Sketch</option>
+                <option value="enhancement">Enhancement</option>
+                <option value="cartoonify"> Cartoonify </option>
+                <option value="cgs">Convert to GrayScale</option>
+                <option value="removebg">Remove Background</option>
+                <option value="dilateimage">Add Dilation</option>
+                <option value="erodeimage">Add Erosion</option>
+                <option value="gradientimage">Add Gradient</option>
+
+                <option value="sharpenimage">Add Sharpness</option>
+                <option value="contourimage">Add Contour Effect</option>
+                <option value="emboseimage">Add Embose Effect</option>
+
+                <option value="blurimage">Add Blurring Effect</option>
+                <option value="findedgesimage">Find Edges</option>
+                <option value="smoothingmoreimage">Add Smoothness</option>
+                <option value="highlighting_pixel">Highlight Pixel</option>
+                <option value="addlightimage">Add Light</option>
+                
+        
+               
+            </select>
+
+            <label
+                class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                Select an option
+            </label>
+        </div>
+
+
+
+
+        <button type='submit'
+            class="inline-flex text-white bg-pink-700 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Transform</button>
+
+    </form>
+
+
+
+
+
+
+
+
+
+   
+</section>
+
+
+
+
+
+
+
+
+</body>
+</html>

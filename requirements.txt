@@ -1,0 +1,6 @@
+opencv-python 
+flask 
+numpy 
+rembg
+docx2pdf
+PyMuPDF
