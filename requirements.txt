@@ -15,5 +15,5 @@ seaborn
 pypdf
 pdf2docx
 pdf2image
-fitz  
+PyMuPDF
 gunicorn
