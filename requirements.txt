@@ -13,7 +13,6 @@ wordcloud
 urlextract
 seaborn 
 pypdf
-pythoncom
 pdf2docx
 pdf2image
 fitz  
