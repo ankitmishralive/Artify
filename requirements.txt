@@ -7,7 +7,7 @@ flask-cors
 docx2pdf
 numpy
 pandas
-sklearn
+scikit-learn
 matplotlib
 wordcloud
 urlextract
