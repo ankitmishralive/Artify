@@ -1,4 +1,4 @@
-import pythoncom
+# import pythoncom
 from pdf2docx import Converter
 import os
 import shutil
@@ -26,7 +26,8 @@ def convert_pdf_to_docx(pdf_path, docx_path):
 def convert_docx_to_pdf(docx_path,pdf_path):
     print("Doc Path here : ----------",docx_path)
     print("PDF path here : ---------------",pdf_path)
-    convert(docx_path,pdf_path,pythoncom.CoInitialize())
+    # convert(docx_path,pdf_path,pythoncom.CoInitialize())
+    convert(docx_path,pdf_path)
 
 
 def convert_img_to_pdf(img_path,pdf_path,name):
