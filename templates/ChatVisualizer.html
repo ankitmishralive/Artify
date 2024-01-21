@@ -1,0 +1,260 @@
+{% include "NewHeader.html" %}
+
+<br> 
+<div class="bg-cover bg-fixed" style="background-image: url('/static/css/theme1.jpg');">
+<div class="container mx-auto px-6 mt-14  ">
+    <div class="text-center mb-8 mt-10 py-4">
+        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-purple-500">
+            A.I Powered- Chat Visualizer
+        </h2>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-300 mt-2">
+            Gain valuable insights into your whatsapp chat with our cutting-edge A.I. technology.
+        </p>
+    </div>
+
+
+    <br>
+
+
+{% if data %}
+<form action="/visualize" method="post" enctype="multipart/form-data" class="flex flex-col items-center mt-8 w-full">
+    <div class="mt-8 w-full">
+        <label for="analysisType" class="block text-lg font-semibold mb-2 text-white">Select Analysis Type</label>
+        <input type="hidden" name="filename" value="{{ filename }}">
+        <select id="analysisType" name="operations" class="w-full border p-3 rounded focus:outline-none bg-black text-white ">
+            {% for user in data.user_list %}
+                <option class="text-white bg-black" value="{{ user }}">{{ user }}</option>
+            {% endfor %}
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+    <button class="mt-4 bg-gradient-to-r from-red-500 via-green-500 to-yellow-500 text-white py-3 px-8 rounded-full hover:bg-blue-600 focus:outline-none transition duration-300 ease-in-out transform hover:scale-105">
+        {{ data.text }}
+    </button>
+</form>
+
+{% endif %}
+
+
+{% if analytical_data %}
+
+
+    <h2 class="text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white">
+        Top Analytics
+    </h2>
+
+    <br> 
+
+    <div class="grid grid-cols-2 gap-4">
+        <!-- Total Messages -->
+        <div class="p-4 bg-blue-500 shadow rounded text-white">
+            <h2 class="text-lg font-semibold mb-2">Total Messages</h2>
+            <p class="text-2xl">{{ analytical_data.num_messages }}</p>
+        </div>
+
+        <!-- Total Words -->
+        <div class="p-4 bg-green-500 shadow rounded text-white">
+            <h2 class="text-lg font-semibold mb-2">Total Words</h2>
+            <p class="text-2xl">{{ analytical_data.words }}</p>
+        </div>
+
+        <!-- Total Media Shared -->
+        <div class="p-4 bg-yellow-500 shadow rounded text-white">
+            <h2 class="text-lg font-semibold mb-2">Total Media Shared</h2>
+            <p class="text-2xl">{{ analytical_data.media_messages }}</p>
+        </div>
+
+        <!-- Links Shared -->
+        <div class="p-4 bg-red-500 shadow rounded text-white">
+            <h2 class="text-lg font-semibold mb-2">Links Shared</h2>
+            <p class="text-2xl">{{ analytical_data.links }}</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Separator with Text -->
+<h2 class="flex flex-col sm:flex-row sm:flex-nowrap sm:items-center my-8">
+    <span class="flex-grow block border-t border-gray-500 mb-2 sm:mb-0" aria-hidden="true" role="presentation"></span>
+    <span class="flex-none block mx-4 px-4 py-2.5 text-lg leading-none font-medium uppercase bg-gray-200 text-gray-800">
+        Integrated Professional Competency Matrix
+    </span>
+    <span class="flex-grow block border-t border-gray-500 mb-2 sm:mb-0" aria-hidden="true" role="presentation"></span>
+</h2>
+
+<!-- Monthly and Daily Timeline -->
+<div class="flex  justify-center items-center mb-8">
+    <div class="flex flex-col items-center border rounded border-gray-300 p-3">
+        <h3 class="text-lg leading-none font-medium uppercase text-white mb-4">Monthly Timeline</h3>
+        <img src="/static/chatVisualizer/monthly_timeline.png" alt="Monthly Timeline" class="w-full h-auto">
+    </div>
+</div>
+
+<br>
+
+<div class="flex  justify-center items-center mb-8">
+<div class="flex flex-col items-center border rounded border-gray-300 p-3 ">
+    <h3 class="text-lg leading-none font-medium uppercase text-white mb-4">Daily Timeline</h3>
+    <img src="/static/chatVisualizer/daily_timeline.png" alt="Daily Timeline" class="w-full h-auto">
+</div>
+</div>
+
+
+
+<!-- Common Words and Word Cloud -->
+<div class="flex justify-center mb-8">
+    <div class="flex flex-col items-center border rounded border-gray-300 p-4">
+        <h3 class="text-lg leading-none font-medium uppercase text-white mb-4">Common Words</h3>
+        <div class="flex justify-center">
+            <img src="/static/chatVisualizer/common_words.png" alt="Common Words" class="max-w-full h-auto">
+        </div>
+    </div>
+</div>
+
+<div class="flex justify-center mb-8">
+    <div class="flex flex-col items-center border rounded border-gray-300 p-4">
+        <h3 class="text-lg leading-none font-medium uppercase text-white mb-4">Word Cloud</h3>
+        <div class="flex justify-center">
+            <img src="/static/chatVisualizer/chat_word_cloud.png" alt="Word Cloud" class="max-w-full h-auto">
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Separator with Text -->
+<h2 class="flex flex-col sm:flex-row sm:flex-nowrap sm:items-center my-8">
+    <span class="flex-grow block border-t border-gray-500 mb-2 sm:mb-0" aria-hidden="true" role="presentation"></span>
+    <span class="flex-none block mx-4 px-4 py-2.5 text-lg leading-none font-medium uppercase bg-gray-200 text-gray-800">
+        Activity Map 
+    </span>
+    <span class="flex-grow block border-t border-gray-500 mb-2 sm:mb-0" aria-hidden="true" role="presentation"></span>
+</h2>
+
+<!-- Most Busy Month and Most Busy Day -->
+<div class="flex justify-center mb-8">
+    <div class="flex flex-col items-center border rounded border-gray-300 p-4">
+        <h3 class="text-lg leading-none font-medium uppercase text-white mb-4">Most Busy Month</h3>
+        <div class="flex justify-center">
+            <img src="/static/chatVisualizer/buzy_month.png" alt="Most Busy Month" class="max-w-full h-auto">
+        </div>
+    </div>
+</div>
+
+<div class="flex justify-center mb-8">
+    <div class="flex flex-col items-center border rounded border-gray-300 p-4">
+        <h3 class="text-lg leading-none font-medium uppercase text-white mb-4">Most Busy Day</h3>
+        <div class="flex justify-center">
+            <img src="/static/chatVisualizer/buzy_day.png" alt="Most Busy Day" class="max-w-full h-auto">
+        </div>
+    </div>
+</div>
+
+
+
+{% if analytical_data['user_contro_percent_dict'] %}
+<!-- Buzy Users in Group -->
+<div class="flex justify-center mb-8">
+    <div class="flex flex-col items-center border rounded border-gray-300 p-4">
+        <h3 class="text-lg leading-none font-medium uppercase text-white mb-4">Buzy Users in Group</h3>
+        <img src="/static/chatVisualizer/buzy_users.png" alt="Buzy Users in Group" class="w-full h-auto">
+    </div>
+</div>
+
+<br>
+
+
+
+
+<div class="container mx-auto px-4">
+    <div class="mb-8">
+        <h2 class="flex flex-col sm:flex-row sm:flex-nowrap sm:items-center my-8">
+            <span class="flex-grow block border-t border-white mb-2 sm:mb-0" aria-hidden="true" role="presentation"></span>
+            <span class="flex-none block mx-4 px-4 py-2.5 text-base leading-none font-medium uppercase bg-white text-black dark:bg-gray-800 dark:text-white">
+                All Users Contribution in Group Chat
+            </span>
+            <span class="flex-grow block border-t border-white mb-2 sm:mb-0" aria-hidden="true" role="presentation"></span>
+        </h2>
+
+        <table class="min-w-full bg-black border border-gray-700 dark:bg-gray-900">
+            <thead>
+                <tr class="text-white" style="background-color:#009dd1;">
+                    <th class="py-2 px-4 font-medium text-left">Name</th>
+                    <th class="py-2 px-4 font-medium text-left">Percent</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for name, percent in analytical_data['user_contro_percent_dict'].items() %}
+                    <tr class="border-b border-gray-700">
+                        <td class="py-2 px-4 text-gray-300">{{ name }}</td>
+                        <td class="py-2 px-4 text-gray-300">{{ percent }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endif %}
+
+
+{% if not analytical_data %}
+<div class="container mx-auto mt-8">
+    <div class="bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 text-white p-8 rounded-lg shadow-lg text-center">
+        <h2 class="text-3xl font-bold mb-4">Important Note</h2>
+        <p class="mx-auto leading-relaxed text-lg mb-6">
+            Your privacy is our priority. We want to assure you that we do not save any of your chat files.
+            The chat files are automatically deleted after providing you with the analysis.
+        </p>
+    </div>
+</div>
+
+{% endif %}
+{% endif %}
+
+
+
+
+{% if not data %}
+<div class="container mx-auto px-4 mt-8">
+
+    <!-- Upload Form Section -->
+    <div class="mx-auto max-w-md bg-white p-8 rounded-lg shadow-lg">
+        <form action="/select-analysis-type" method="post" enctype="multipart/form-data" class="flex flex-col items-center">
+            <label for="formFile" class="block text-gray-800 text-sm font-semibold mb-4">Upload your TXT chat file</label>
+            <input type="file" id="formFile" multiple="multiple" name="file" class="w-full border border-gray-300 p-3 rounded focus:outline-none bg-gray-100 text-gray-800">
+            <button type="submit" class="bg-gradient-to-r from-red-500 via-green-500 to-yellow-500 text-white py-3 px-8 rounded-full mt-6 hover:bg-blue-800 focus:outline-none transition duration-300 ease-in-out transform hover:scale-105">
+                Upload
+            </button>
+        </form>
+    </div>
+
+    <!-- Visualize Form Section -->
+    <div class="mx-auto mt-8">
+        <div class="bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 text-white p-8 rounded-lg shadow-lg text-center">
+            <h2 class="text-3xl font-bold mb-4">Important Note</h2>
+            <p class="mx-auto leading-relaxed text-lg mb-6">
+                Your privacy is our priority. We want to assure you that we do not save any of your chat files.
+                The chat files are automatically deleted after providing you with the analysis.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
+{% endif %}
+
+
+
+
+</div>
+
+
+<br> <br>
+{% include "bot.html" %}
+{% include "footer.html" %} 
+
+

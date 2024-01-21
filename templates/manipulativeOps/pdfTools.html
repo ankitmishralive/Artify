@@ -1,0 +1,55 @@
+{% include "NewHeader.html" %}
+
+
+
+<div class="container mx-auto px-8  mt-16 ">
+
+
+  {% if compressed_file %}
+  
+  <div class="container mx-auto px-4 mt-12">
+    <div class="bg-white-900 p-8 rounded-lg shadow-lg text-center">
+
+      <p class="text-white text-xl mb-4">Your operation is <span class="text-green-300" >successfull</span>, File is Ready For Download </p>
+    
+      {% if compressed_file %}
+        <a href="{{ compressed_file }}"  class="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-700 focus:outline-none transition duration-300" download>Download</a>
+      {% endif %}
+    </div>
+  </div>
+  
+  {% endif %}
+
+
+<br>
+
+
+
+<div class="container mx-auto px-4 mt-8">
+  <div class="bg-gray-900 text-white p-8 rounded-lg shadow-lg text-center">
+    <h1 class="text-3xl font-medium title-font mb-4 text-white">{{ heading }}</h1>
+    <p class="mx-auto leading-relaxed text-base text-white mb-8"> {{ info }}  </p>
+    Upload an image or PDF, choose the format, and convert it to your desired type.
+    <form action="{{ url_for(request.endpoint) }}" method="post" enctype="multipart/form-data">
+
+      <div class="mb-6">
+        <label for="formFile" class="block text-white text-sm font-medium mb-2">Upload Image or PDF</label>
+        <input type="file" id="formFile" multiple="multiple" name="file" class="w-full border border-gray-300 p-2 rounded focus:outline-none">
+      </div>
+
+
+      <button type="submit" class="bg-green-200 text-white py-2 px-6 rounded hover:bg-green-400 focus:outline-none">Convert</button>
+
+
+
+    </form>
+  </div>
+</div>
+
+</div>
+
+
+<br> <br> <br> 
+
+{% include "bot.html" %}
+{% include "footer.html" %}

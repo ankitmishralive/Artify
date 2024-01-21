@@ -1,0 +1,234 @@
+{% include "header.html" %}
+<section class="text-white bg-gradient-to-r from-black to-black body-font">
+    {% with messages=get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="container mx-auto px-4 mt-8">
+
+                    <div class="bg-black p-8 rounded shadow-lg">
+                        <h2 class="text-4xl text-center font-extrabold mb-8 text-purple-500">A.I Analysis</h2>
+
+                        <!-- Display PDF -->
+                        <div class="mb-8 text-center">
+                            <div class="overflow-hidden max-w-screen-md mx-auto">
+                                <iframe src="{{ Insight['og_pdffile'] }}" class="w-full" width="100%" height="600"></iframe>
+                            </div>
+                        </div>
+
+                        <!-- Summary -->
+                        <div class="mb-8">
+                            <h2 class="flex flex-row flex-nowrap items-center my-8">
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                                <span class="flex-none block mx-4 px-4 py-2.5 text-base leading-none font-medium uppercase bg-white text-black">
+                                    Career Highlights
+                                </span>                                
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                            </h2>
+
+                            <p class="text-lg text-gray-300">{{ Insight['summary'] }}</p>
+                        </div>
+
+                        <!-- College Info -->
+                        <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 mb-8" role="alert">
+                            <p class="font-bold">College Info:</p>
+                            <p>{{ Insight['college_tier'] }}</p>
+                        </div>
+
+                        <!-- Word Cloud -->
+                        <br> <br>
+                        <div class="mb-8">
+                            <h2 class="flex flex-row flex-nowrap items-center my-8">
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                                <span class="flex-none block mx-4 px-4 py-2.5 text-base leading-none font-medium uppercase bg-white text-black">
+                                    Key Professional Terms
+                                </span>                                
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                            </h2>
+
+                            <br> <br>
+                            <img src="/static/analyzeArea/wordcloud.png" alt="" class="w-full h-auto">
+
+                            <br> 
+                        </div>
+                        
+                        <br> <br>
+                        <!-- Role Match Bar Graph -->
+                        <div class="mb-8">
+                            <h2 class="flex flex-row flex-nowrap items-center my-8">
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                                <span class="flex-none block mx-4 px-4 py-2.5 text-base leading-none font-medium uppercase bg-white text-black">
+                                    Position Compatibility Chart
+                                </span>                                
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                            </h2>
+                            <br> 
+                            <img src="/static/analyzeArea/role_match_bar_graph.png" alt="" class="w-full h-auto">
+                        </div>
+
+                        <!-- Role Match -->
+                        <div class="mb-8">
+                            <br> 
+                            <h2 class="flex flex-row flex-nowrap items-center my-8">
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                                <span class="flex-none block mx-4 px-4 py-2.5 text-base leading-none font-medium uppercase bg-white text-black">
+                                    Roles Compatible with Your Resume
+                                </span>                                
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                            </h2>
+                         
+                            {% for role, percentage in Insight['role_match'].items() %}
+                                <p class="text-lg text-gray-300">
+                                    Your resume matches with <b class="text-red-500"> "{{ role }}" </b> with  <b class="text-gold"> {{ percentage }}% </b>
+                                </p>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Recommended Courses -->
+                        <div class="mb-8">
+                            <h2 class="flex flex-row flex-nowrap items-center my-8">
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                                <span class="flex-none block mx-4 px-4 py-2.5 text-base leading-none font-medium uppercase bg-white text-black">
+                                    Courses to Enhance Your Job Compatibility
+                                </span>                                
+                                <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                            </h2>
+                           
+                            {% for role, courses in Insight['recommended_courses'].items() %}
+                                <div class="mb-4">
+                                    <h3 class="text-xl font-bold mb-2 text-green-500">{{ role }}</h3>
+                                    <ul class="list-disc pl-6">
+                                        {% for course in courses %}
+                                            <li class="text-lg text-yellow-500">{{ course }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+
+                      <!-- ... (previous code) ... -->
+
+<div class="max-w-2xl mx-auto mt-8">
+    <h2 class="flex flex-row flex-nowrap items-center my-8">
+        <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+        <span class="flex-none block mx-4 px-4 py-2.5 text-base leading-none font-medium uppercase bg-white text-black">
+           Top Resume Tips:
+        </span>                                
+        <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+    </h2>
+
+    <!-- Tips 1-4 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Tip 1: Tailor Your Resume -->
+        <div class="mb-6">
+            <h3 class="text-2xl font-bold mb-2 text-purple-500">1. Tailor Your Resume</h3>
+            <p class="text-white">Customize your resume for each job application. Highlight the skills and experiences most relevant to the specific job.</p>
+        </div>
+
+        <!-- Tip 2: Include Achievements -->
+        <div class="mb-6">
+            <h3 class="text-2xl font-bold mb-2 text-purple-500">2. Highlight Achievements</h3>
+            <p class="text-white">Showcase your accomplishments rather than just listing job duties. Use quantifiable metrics to demonstrate your impact.</p>
+        </div>
+
+        <!-- Tip 3: Use Action Verbs -->
+        <div class="mb-6">
+            <h3 class="text-2xl font-bold mb-2 text-purple-500">3. Use Action Verbs</h3>
+            <p class="text-white">Start bullet points with strong action verbs to convey a sense of accomplishment and responsibility in your previous roles.</p>
+        </div>
+
+        <!-- Tip 4: Keep it Concise -->
+        <div>
+            <h3 class="text-2xl font-bold mb-2 text-purple-500">4. Keep it Concise</h3>
+            <p class="text-white">Aim for a one-page resume, especially if you're early in your career. For more experienced professionals, a two-page resume is generally acceptable.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ... (continue with the rest of your code) ... -->
+
+                        
+
+                        <!-- Resume Reference -->
+                        <h2 class="flex flex-row flex-nowrap items-center my-8">
+                            <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                            <span class="flex-none block mx-4 px-4 py-2.5 text-base leading-none font-medium uppercase bg-white text-black">
+                                Curated Video Recommendations:
+                            </span>                                
+                            <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                        </h2>
+                        <br>
+
+                        <div class="flex justify-center items-center">
+                            <div class="max-w-md bg-white p-8 rounded shadow-md">
+                                <div class="aspect-w-16 aspect-h-9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Tt08KmFfIYQ?si=P1kGsgD9Al6BLJYp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <br> 
+                        
+                        <div class="flex justify-center items-center">
+                            <div class="max-w-md bg-white p-8 rounded shadow-md">
+                                <div class="aspect-w-16 aspect-h-9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BYUy1yvjHxE?si=6FxS0WObRa2gmbnJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container mx-auto px-4 mt-8">
+    <div class="bg-gradient-to-r from-purple-700 to-indigo-800 text-white p-8 rounded-lg shadow-lg text-center">
+        <h1 class="text-5xl font-bold title-font mb-6 branding">A.I Resume Analyzer</h1>
+        <p class="mx-auto leading-relaxed text-lg mb-8 branding">
+            Unlock valuable insights from your resume. Upload your CV for a thorough analysis and personalized recommendations.
+        </p>
+
+        <form action="/analyze" method="post" enctype="multipart/form-data" class="flex flex-col items-center">
+
+            <div class="mb-6 w-full">
+                <label for="formFile" class="block text-white text-sm font-medium mb-2">Upload your PDF Resume</label>
+                <input type="file" id="formFile" multiple="multiple" name="file" class="w-full border border-white p-3 rounded focus:outline-none bg-transparent text-white">
+            </div>
+
+            <button type="submit" class="bg-pink-600 text-white py-3 px-8 rounded-full hover:bg-pink-700 focus:outline-none transition duration-300 ease-in-out transform hover:scale-105">Analyze</button>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    <br> <br>
+  
+
+  
+  {% include "footer.html" %}

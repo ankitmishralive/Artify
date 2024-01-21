@@ -1,87 +1,345 @@
 
- {% include "header.html" %} 
-      
-     
+{% include "NewHeader.html" %} 
 
- <section class="text-gray-400 bg-black body-font">
-  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Artify</h1>
-      <p class="mb-8 leading-relaxed">
+    <main>
+
+        <section id="home" class="relative overflow-hidden z-10 pt-35 md:pt-40 xl:pt-45">
+
+            <div class="max-w-7xl mx-auto">
+                <div class="absolute -z-10 pointer-events-none inset-0 overflow-hidden -mx-28">
+                    <div
+                        class="absolute -z-1 -top-[128%] sm:-top-[107%] xl:-top-[73%] left-1/2 -translate-x-1/2 -u-z-10 hero-circle-gradient w-full h-[1282px] rounded-full max-w-[1282px]">
+                    </div>
+                    <div
+                        class="absolute -z-1 -top-[112%] sm:-top-[93%] xl:-top-[62%] left-1/2 -translate-x-1/2 -u-z-10 hero-circle-gradient w-full h-[1046px] rounded-full max-w-[1046px]">
+                    </div>
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -u-z-10">
+                        <img src="static/media/blur-02.svg" alt="blur" class="max-w-none">
+                    </div>
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -u-z-10">
+                        <img src="static/media/blur-01.svg" alt="blur" class="max-w-none">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mx-auto max-w-[900px] px-4 sm:px-8 xl:px-0 relative z-1">
+                <div class="text-center">
+                    <a href="index.html#"
+                        class="hero-subtitle-gradient hover:hero-subtitle-hover relative mb-5 font-medium text-sm inline-flex items-center gap-2 py-2 px-4.5 rounded-full">
+                        <img src="static/media/icon-title.svg" alt="icon">
+                        <span class="hero-subtitle-text">
+                            Your Ultimate Creative Companion!
+                        </span>
+                    </a>
+                    <h1 class="text-white mb-6 text-3xl font-extrabold sm:text-5xl xl:text-heading-1">
+                        Your
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
+                        Document Mastery
+                      </span>
+                      Redefined Here.
+                    </h1>
+                    <p class="max-w-[500px] mx-auto mb-9 font-medium md:text-lg">
+                        Unlock the Potential of Your Documents with DocBerg: Reshape Resumes, Visualize Chats,
+        Effortless Compression, PDF Mastery, Multilingual Audio, and Streamlined Format Conversions & much more undercover.
+                    </p>
+                    <button onclick="moveToTools()"
+                        class="hero-button-gradient inline-flex rounded-lg py-3 px-7 text-white font-medium ease-in duration-300 hover:opacity-80">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+            <div class="mt-17" data-wow-delay="0.1s">
+                <img class="mx-auto" src="static/media/hero.svg" alt="hero" />
+            </div>
+        </section>
+
+
+        <section id="features" class="overflow-hidden pt-17.5 lg:pt-22.5 xl:pt-27.5 scroll-mt-17">
+            <div class="max-w-[1222px] mx-auto px-4 sm:px-8 xl:px-0">
+                <div class="text-center">
+                    <span class="hero-subtitle-gradient relative mb-4 font-medium text-sm inline-flex items-center gap-2 py-2 px-4.5 rounded-full">
+                        <img src="static/media/icon-title.svg" alt="icon">
+                        <span class="hero-subtitle-text"> No Limits, No Sign-Up</span>
+                    </span>
+                    <h2 class="text-white mb-4.5 text-2xl font-extrabold sm:text-4xl xl:text-heading-2">
+                        Free Tools You'd Usually Pay For
+                    </h2>
+                    <p class="max-w-[714px] mx-auto mb-5 font-medium">
+                        DocBerg is ever-evolving. We're committed to improving and updating our platform based on user feedback and the latest AI advancements. We aim to continually enhance your document analysis experience.
+                    </p>
+                </div>
+         
+            </div>
+        </section>
+
+
+       
+        <div id="cardSlide" class="container mx-auto mt-8">
+            <!-- Your cards will go here -->
+            <div class="card bg-gradient-to-r from-gray-800 to-gray-900 rounded-md overflow-hidden shadow-lg transition duration-300 transform hover:scale-105">
+                <img src="/static/css/docListener.png" alt="Card Image" class="w-full h-64 object-cover rounded-t-md">
+                <div class="p-6">
+                    <h2 class="text-xl sm:text-2xl lg:text-3xl text-white font-semibold mb-2">Listen Audio of PDF/Images</h2>
+                    <p class="text-gray-300">Effortless government document translation. Easily navigate documents and overcome language barriers in notices from universities and institutions. Listen to desired audio of PDF/images.</p>
+                    <div class="flex justify-center mt-4">
+                        <a href="/listen" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Visit</a>
+                    </div>
+                </div>
+            </div>
         
-        Objective is to create a versatile image processing tool designed to bring your creative vision to life.
-         ImageArtify has something for everyone. 
-         it is improving daily, we are still developing & adding some good functionality 
-      </p>
-      <div class="flex w-full md:justify-start justify-center items-end">
-<br>
+            <!-- Add other cards with similar structure -->
+      
+            <div class="card bg-gradient-to-r from-gray-800 to-gray-900 rounded-md overflow-hidden shadow-lg mt-4 transition duration-300 transform hover:scale-105">
+              <img src="/static/css/resumeAnalyzer.png" alt="Card Image" class="w-full h-48 object-cover rounded-t-md">
+              <div class="p-6">
+                  <h2 class="text-xl sm:text-2xl lg:text-3xl text-white font-semibold mb-2">Resume Analyzer</h2>
+                  <p class="text-gray-300">Get profound insights about your resume/CV with our AI-powered tool.</p>
+                  <div class="flex justify-center mt-4">
+                      <a href="/ai-resume-analyzer" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Visit</a>
+                  </div>
+              </div>
+          </div>
+      
+          <div class="card bg-gradient-to-r from-gray-800 to-gray-900 rounded-md overflow-hidden shadow-lg mt-4 transition duration-300 transform hover:scale-105">
+              <img src="/static/css/chatVisualizer.png" alt="Card Image" class="w-full h-48 object-cover rounded-t-md">
+              <div class="p-6">
+                  <h2 class="text-xl sm:text-2xl lg:text-3xl text-white font-semibold mb-2">Chat Visualizer</h2>
+                  <p class="text-gray-300">Get profound insights about your chats.</p>
+                  <div class="flex justify-center mt-4">
+                      <a href="/ai-chat-visualizer" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Visit</a>
+                  </div>
+              </div>
+          </div>
+      
+          <div class="card bg-gradient-to-r from-gray-800 to-gray-900 rounded-md overflow-hidden shadow-lg mt-4 transition duration-300 transform hover:scale-105">
+              <img src="/static/css/all.png" alt="Card Image" class="w-full h-48 object-cover rounded-t-md">
+              <div class="p-6">
+                  <h2 class="text-xl sm:text-2xl lg:text-3xl text-white font-semibold mb-2">Unlock a World of Free Tools</h2>
+                  <p class="text-gray-300">Explore all the tools that will help you in your daily tasks.</p>
+                  <div class="flex justify-center mt-4">
+                      <a href="/features" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Visit</a>
+                  </div>
+              </div>
+          </div>
+      
+        
+        </div>
 
 
 
-<br> 
+                </div>
+                </div>
+            </div>
+        </section>
 
-<button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 mx-2 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-  <a href="/zone">Get Started</a>
-</button>
 
-<button class="inline-flex text-white bg-pink-800 border-0 py-2 px-6 mx-2 focus:outline-none hover:bg-pink-600 rounded text-lg">
-  <a href="https://github.com/ankitmishralive" target="_blank">Contribute</a>
-</button>
+        <section class="pt-12.5">
+            <div class="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
+                <div class="grid sm:grid-cols-12 gap-7.5" data-highlighter>
 
+                    <div class="sm:col-span-12">
+                        <div class="relative rounded-3xl features-box-border">
+                            <div class="relative overflow-hidden rounded-3xl p-10 xl:p-15 box-hover">
+                                <div class="flex items-center justify-between relative z-20">
+                                    <div class="max-w-[477px] w-full">
+                                        <span
+                                            class="hero-subtitle-gradient relative mb-4 font-medium text-sm inline-flex items-center gap-2 py-2 px-4.5 rounded-full">
+                                            <img src="static/media/icon-title.svg" alt="icon">
+                                            <span class="hero-subtitle-text">
+                                                AI-Powered Resume Analyzer
+                                            </span>
+                                        </span>
+                                        <h3 class="text-white mb-4.5 font-bold text-heading-4">
+                                            Intelligent Insights
+                                        </h3>
+                                        <p class="font-medium mb-10">
+                                            Get profound Insights about your Resume/CV with our A.I powered Tool.
+                                        </p>
+                                        <a href="/ai-resume-analyzer"
+                                            class="features-button-gradient relative inline-flex items-center gap-1.5 rounded-full py-3 px-6 text-white text-sm ease-in duration-300 hover:shadow-button">
+                                            Learn more
+                                            <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M13.3992 5.60002L8.22422 0.350024C7.99922 0.125024 7.64922 0.125024 7.42422 0.350024C7.19922 0.575024 7.19922 0.925025 7.42422 1.15002L11.6242 5.42503H0.999219C0.699219 5.42503 0.449219 5.67502 0.449219 5.97502C0.449219 6.27502 0.699219 6.55003 0.999219 6.55003H11.6742L7.42422 10.875C7.19922 11.1 7.19922 11.45 7.42422 11.675C7.52422 11.775 7.67422 11.825 7.82422 11.825C7.97422 11.825 8.12422 11.775 8.22422 11.65L13.3992 6.40002C13.6242 6.17502 13.6242 5.82502 13.3992 5.60002Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="max-w-[428px] w-full hidden sm:block">
+                                        <img src="static/media/big-icon.svg" alt="icon" />
+                                    </div>
+                                </div>
+
+                                <div class="absolute -z-10 pointer-events-none inset-0 overflow-hidden -mx-28">
+                                    <span class="absolute right-0 bottom-0"><img src="static/media/shape-01.png"
+                                            alt="shape" /></span>
+                                    <span class="absolute left-0 top-0"><img src="static/media/shape-02.svg"
+                                            alt="shape" /></span>
+                                    <span class="absolute left-1/2 -translate-x-1/2 bottom-0">
+                                        <img src="static/media/blur-03.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                    <span class="absolute left-1/2 -translate-x-1/2 bottom-0">
+                                        <img src="static/media/blur-04.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                    <span class="absolute left-1/2 -translate-x-1/2 bottom-0">
+                                        <img src="static/media/blur-05.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                    <span class="absolute right-0 top-0">
+                                        <img src="static/media/shape-03.svg" alt="shape" class="max-w-none" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sm:col-span-7">
+                        <a href="/listen">
+                        <div class="relative rounded-3xl features-box-border">
+                            <div class="relative overflow-hidden rounded-3xl px-11 pt-12.5 pb-14 box-hover box-hover-small">
+                                
+                                <div class="relative z-20">
+                                   
+                                    <span
+                                        class="icon-border relative max-w-[80px] w-full h-20 rounded-full inline-flex items-center justify-center mb-13.5 mx-auto">
+                                        <img src="static/media/icon-05.svg" alt="icon" />
+                                    </span>
+                                    <h3 class="text-white mb-4.5 font-semibold text-heading-6">
+                                        Listen Audio of Government Documents in Your Desired Languages
+                                    </h3>
+                                    <p class="font-medium">
+                                        Facing problem in understanding Government Documents? University Notices ? 
+                                        We have solution for you...
+                                    </p>
+                             
+                                </div>
+
+                                <div class="absolute -z-10 pointer-events-none inset-0 overflow-hidden">
+                                    <span class="absolute left-0 bottom-0">
+                                        <img src="static/media/blur-06.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                    <span class="absolute right-0 top-0">
+                                        <img src="static/media/blur-07.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                    <span class="absolute right-[16%] top-[16%]"><img src="static/media/shape-04.svg"
+                                            alt="shape" /></span>
+                                    <span class="absolute left-0 bottom-0">
+                                        <img src="static/media/blur-08.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                    <span class="absolute left-0 bottom-0">
+                                        <img src="static/media/blur-09.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="sm:col-span-5">
+                        <a href="/ai-chat-visualizer">
+                        <div class="relative rounded-3xl features-box-border">
+                            <div
+                                class="relative overflow-hidden rounded-3xl px-11 pt-12.5 pb-14 box-hover box-hover-small">
+                                <div class="relative z-20">
+                                    <span
+                                        class="icon-border relative max-w-[80px] w-full h-20 rounded-full inline-flex items-center justify-center mb-13.5 mx-auto">
+                                        <img src="static/media/icon-07.svg" alt="icon" />
+                                    </span>
+                                    <h3 class="text-white mb-4.5 font-semibold text-heading-6">
+                                        Chat Visualizer
+                                    </h3>
+                                    <p class="font-medium">
+                                        Get profound Insights about your Chat with our A.I powered Tool.
+                                    </p>
+                                </div>
+
+                                <div class="absolute -z-10 pointer-events-none inset-0 overflow-hidden">
+                                    <span class="absolute right-[14%] top-[17%]"><img src="static/media/shape-05.svg"
+                                            alt="shape" /></span>
+                                    <span class="absolute left-0 bottom-0">
+                                        <img src="static/media/blur-10.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                    <span class="absolute top-0 right-0">
+                                        <img src="static/media/blur-11.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                    <span class="absolute top-0 right-0">
+                                        <img src="static/media/blur-12.svg" alt="blur" class="max-w-none">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                       </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="pricing" class="relative z-20 overflow-hidden pt-22.5 lg:pt-27.5 xl:pt-32.5 scroll-mt-17">
+            <div class="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
+
+                <div class="relative top-18">
+                    <div class="absolute -z-10 pointer-events-none inset-0 overflow-hidden -my-55">
+                        <div class="absolute left-1/2 -translate-x-1/2 top-0">
+                            <img src="static/media/blur-13.svg" alt="blur" class="max-w-none">
+                        </div>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-0">
+                            <img src="static/media/blur-14.svg" alt="blur" class="max-w-none">
+                        </div>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-0">
+                            <img src="static/media/blur-15.svg" alt="blur" class="max-w-none">
+                        </div>
+                    </div>
+                    <div
+                        class="max-w-[830px] w-full h-[830px] rounded-full bg-dark absolute left-1/2 -translate-x-1/2 top-0 pricing-circle">
+                    </div>
+                    <div
+                        class="max-w-[482px] w-full h-60 overflow-hidden absolute -z-1 -top-30 left-1/2 -translate-x-1/2">
+                        <div class="stars"></div>
+                        <div class="stars2"></div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center gap-7.5 relative -z-1">
+                    <div class="max-w-[50px] w-full h-[250px] relative pricing-grid pricing-grid-border"></div>
+                    <div class="max-w-[50px] w-full h-[250px] relative pricing-grid pricing-grid-border"></div>
+                    <div class="max-w-[50px] w-full h-[250px] relative pricing-grid pricing-grid-border"></div>
+                    <div class="max-w-[50px] w-full h-[250px] relative pricing-grid pricing-grid-border"></div>
+                    <div class="max-w-[50px] w-full h-[250px] relative pricing-grid pricing-grid-border"></div>
+                    <div class="max-w-[50px] w-full h-[250px] relative pricing-grid pricing-grid-border"></div>
+                    <div class="max-w-[50px] w-full h-[250px] relative pricing-grid pricing-grid-border"></div>
+                    <div class="max-w-[50px] w-full h-[250px] relative pricing-grid pricing-grid-border"></div>
+                </div>
+
+                <div class="wow fadeInUp mb-17.5 -mt-24 text-center z-10 relative">
+                    <span
+                        class="hero-subtitle-gradient relative mb-4 font-medium text-sm inline-flex items-center gap-2 py-2 px-4.5 rounded-full">
+                        <img src="static/media/icon-title.svg" alt="icon">
+                        <span class="hero-subtitle-text"> DocBerg By NeuralBerg </span>
+                    </span>
+                    <h2 class="text-white mb-4.5 text-2xl font-extrabold sm:text-4xl xl:text-heading-2">
+                        More about us
+                    </h2>
+                    <p class="max-w-[714px] mx-auto font-medium">
+                       It is still Underdevelopment, their are many more features that are currently underdevlopment phase. 
+
+                    </p>
+                </div>
+                
+            
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <br> <br>
  
 
 
-</div>
+        {% include "bot.html" %}
 
 
-
-    </div>
-
-    <div class="flex flex-wrap -m-4 text-center">
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 inline-block p-6 rounded-lg"> <!-- Changed: added p-6 for padding -->
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-            <path d="M8 17l4 4 4-4m-4-5v9"></path>
-            <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
-          </svg>
-          <h2 class="title-font font-medium text-3xl text-gray-900">   </h2>
-   
-
-          <p class="leading-relaxed"></p>
-
-
-        </div>
-      </div>
-    </div>
-        
-  </div>
-
-</section>
-
-
-
-
-<section class="text-gray-600 bg-black body-font branding">
-  <div class="container px-5 py-24 mx-auto">
-          <div class="text-center mb-20">
-            <h1 class="sm:text-3xl text-white text-2xl font-medium title-font text-gray-900 mb-4 ">Your Gateway to Creative Image Transformation! <b> ImageArtify </b></h1>
-            <br> 
-            <p class="text-base text-white leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s ">
-        
-      
-               With <b> ImageArtify </b>, you have at your fingertips an array of powerful image manipulation options:
-
-            </p>
-            <div class="flex mt-6 justify-center">
-              <div class="w-16 h-1 rounded-full bg-blue-500 inline-flex"></div>
-            </div>
-            <br> <br> <br>
-                     </div>
-
-
-            
-       
-  </div>
-
-
-
+        {% include "footer.html" %}

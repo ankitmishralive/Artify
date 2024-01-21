@@ -1,0 +1,40 @@
+Question,Answer,Intent
+Hi there,Hello! Am Bot Here to help you.,greeting
+How are you,Hello! Am Bot Here to help you.,greeting
+Is anyone there?,Hello! Am Bot Here to help you.,greeting
+Hey,Hello! Am Bot Here to help you.,greeting
+Hola,Hello! Am Bot Here to help you.,greeting
+Hello,Hello! Am Bot Here to help you.,greeting
+Good day,Hello! Am Bot Here to help you.,greeting
+Bye,See you!,goodbye
+See you later,See you!,goodbye
+Goodbye,See you!,goodbye
+"Nice chatting to you, bye",See you!,goodbye
+Till next time,See you!,goodbye
+Thanks,My pleasure,thanks
+Thank you,My pleasure,thanks
+That's helpful,My pleasure,thanks
+"Awesome, thanks",My pleasure,thanks
+Thanks for helping me,My pleasure,thanks
+What is Simplilearn?,Simplilearn is the popular online Bootcamp & online courses learning platform,query
+Tell me about interior design,Interior design involves creating aesthetically pleasing and functional spaces. Interior designers plan and execute designs for residential and commercial spaces.,interior_design_info
+What does an interior designer do?,Interior design involves creating aesthetically pleasing and functional spaces. Interior designers plan and execute designs for residential and commercial spaces.,interior_design_info
+Interior design services,Interior design involves creating aesthetically pleasing and functional spaces. Interior designers plan and execute designs for residential and commercial spaces.,interior_design_info
+Recommend a style for my living room,"Sure! To recommend a style, I would need more information about your preferences. What colors, themes, or specific elements do you like?",style_recommendation
+What interior style suits my space?,"Sure! To recommend a style, I would need more information about your preferences. What colors, themes, or specific elements do you like?",style_recommendation
+Living room design ideas,"Sure! To recommend a style, I would need more information about your preferences. What colors, themes, or specific elements do you like?",style_recommendation
+What colors work well in a bedroom?,"Choosing bedroom colors depends on your preferences. Some popular choices include calming blues, soothing greens, or warm neutrals. What colors do you have in mind?",color_preference
+Suggest bedroom color schemes,"Choosing bedroom colors depends on your preferences. Some popular choices include calming blues, soothing greens, or warm neutrals. What colors do you have in mind?",color_preference
+Favorite bedroom colors,"Choosing bedroom colors depends on your preferences. Some popular choices include calming blues, soothing greens, or warm neutrals. What colors do you have in mind?",color_preference
+What's the average cost of hiring an interior designer?,"The cost varies based on factors like location, scope of work, and designer expertise. It's best to discuss your budget and requirements with a professional designer for accurate estimates.",budget_query
+Interior design budget,"The cost varies based on factors like location, scope of work, and designer expertise. It's best to discuss your budget and requirements with a professional designer for accurate estimates.",budget_query
+Affordable interior design services,"The cost varies based on factors like location, scope of work, and designer expertise. It's best to discuss your budget and requirements with a professional designer for accurate estimates.",budget_query
+Tell me about your design process,"Our design process involves understanding your needs, creating conceptual designs, refining them based on your feedback, and finally implementing the approved design with attention to detail and quality.",design_details
+How do you approach interior design?,"Our design process involves understanding your needs, creating conceptual designs, refining them based on your feedback, and finally implementing the approved design with attention to detail and quality.",design_details
+Design philosophy,"Our design process involves understanding your needs, creating conceptual designs, refining them based on your feedback, and finally implementing the approved design with attention to detail and quality.",design_details
+What is your contact number?,You can reach us at [Your Contact Number]. Feel free to call us or send an email to [Your Email Address] for inquiries or to schedule a consultation.,contact_info
+How can I reach you?,You can reach us at [Your Contact Number]. Feel free to call us or send an email to [Your Email Address] for inquiries or to schedule a consultation.,contact_info
+Contact information,You can reach us at [Your Contact Number]. Feel free to call us or send an email to [Your Email Address] for inquiries or to schedule a consultation.,contact_info
+Tell me about your services,"We offer a range of services, including residential and commercial interior design, space planning, color consultation, and furniture selection. Our goal is to create spaces that reflect your style and meet your functional needs.",services_info
+What services do you offer?,"We offer a range of services, including residential and commercial interior design, space planning, color consultation, and furniture selection. Our goal is to create spaces that reflect your style and meet your functional needs.",services_info
+Interior design offerings,"We offer a range of services, including residential and commercial interior design, space planning, color consultation, and furniture selection. Our goal is to create spaces that reflect your style and meet your functional needs.",services_info

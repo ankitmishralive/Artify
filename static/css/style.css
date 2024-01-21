@@ -1,0 +1,32 @@
+
+      
+.branding  {
+  opacity: 0;
+  animation: fade-in 1s ease-in-out forwards;
+  font-family: sans-serif;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+#cardSlider {
+  overflow: hidden;
+}
+
+.card {
+  display: none;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card.active {
+  display: block;
+}
+
+

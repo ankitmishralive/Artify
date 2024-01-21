@@ -1,25 +1,26 @@
-{% include "header.html" %}
 
-<div class="container mx-auto px-4 mt-12">
 
-  {% with messages=get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    {% for category,message in messages %}
-    <div class="container mx-auto px-4 mt-8">
-      <div class="bg-gray-900 p-8 rounded-lg shadow-lg text-center">
-        <p class="text-white text-xl mb-4">{{ message | safe }}</p>
-        {% if compressed_file %}
-          <a href="{{ compressed_file }}" download class="bg-pink-500 text-white py-2 px-6 rounded-full hover:bg-pink-700 focus:outline-none transition duration-300">Download</a>
-        {% endif %}
-      </div>
-    </div>
+{% include "NewHeader.html" %}
+<div class="container mx-auto px-8  mt-16 ">
+
+
+  {% if compressed_file %}
+  
+  <div class="container mx-auto px-4 mt-12">
+    <div class="bg-white-900 p-8 rounded-lg shadow-lg text-center">
+
+      <p class="text-white text-xl mb-4">Your operation is <span class="text-green-300" >successfull</span>, File is Ready For Download </p>
     
-    {% endfor %}
+      {% if compressed_file %}
+        <a href="{{ compressed_file }}"  class="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-700 focus:outline-none transition duration-300" download>Download</a>
+      {% endif %}
+    </div>
+  </div>
+  
   {% endif %}
-  {% endwith %}
-  
-  
-  <br>
+
+
+<br>
 
   <div class="flex flex-col text-center w-full mb-20">
     <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white text-gray-900 branding">Compress & Download</h1>
@@ -45,11 +46,13 @@
       </select>
     </div>
 
-    <button type="submit" class="bg-pink-800 text-white py-2 px-6 rounded hover:bg-pink-600 focus:outline-none">
-      Compress
-    </button>
+    <button type="submit" class="bg-green-200 text-black py-2 px-6 rounded hover:bg-green-400 focus:outline-none">  Compress</button>
+
 
   </form>
 </div>
 
+<br> <br> <br>
 
+{% include "bot.html" %}
+{% include "footer.html" %}

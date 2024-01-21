@@ -1,0 +1,30 @@
+
+
+
+<div id="chatPanel" class="panel panel-info fixed bottom-16 right-4 w-72 hidden bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg rounded-lg z-50">
+    <div class="panel-heading p-4 rounded-t-lg bg-gray-900">
+        <strong class="text-lg font-semibold">
+            <span class="fas fa-globe"></span> DocBerg
+        </strong>
+    </div>
+    <div class="panel-body fixed-panel p-4 overflow-y-auto max-h-60 text-white">
+        <ul class="space-y-4 media-list">
+            <!-- Chat messages will be displayed here -->
+        </ul>
+    </div>
+    <div class="panel-footer p-4 rounded-b-lg bg-gray-900">
+        <form method="post" id="chatbot-form">
+            <div class="flex items-center space-x-2">
+                <input type="text" class="form-input w-full border text-black border-gray-600 rounded-md p-2 bg-gray-800" placeholder="Type your message..." name="messageText" id="messageText" autofocus />
+                <button class="btn bg-indigo-500 hover:bg-indigo-600 text-white p-2 rounded-md" type="button" id="chatbot-form-btn">Send</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  
+  <!-- Icon or button to toggle the chat window -->
+  <button id="chatToggleBtn" class="fixed bottom-4 right-4 bg-indigo-500 hover:bg-indigo-600 text-white p-3 rounded-full flex items-center z-50">
+    <span class="fas fa-comment text-lg mr-2"></span>
+    <span class="font-semibold">Chat with DocBerg</span>
+  </button>
+  
