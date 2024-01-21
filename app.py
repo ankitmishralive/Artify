@@ -6,9 +6,9 @@ from lib.convertor.convertor import convert_pdf_to_docx,convert_docx_to_pdf,conv
 from lib.compressor.compressor import compresion,pdf_Compressor
 from lib.fm.ocrTranslater import pdf_toaudio
 from lib.resumeAnalyzer.ResumeAnalyzer import Analyzer
-from lib.image_Enhancer.processor import ProcessImage
+# from lib.image_Enhancer.processor import ProcessImage
 from PIL import Image
-import cv2
+# import cv2
 
 from lib.bot.bot import chatbot
 # Grammer Correction 
@@ -47,9 +47,9 @@ def home():
 def oldhome():
     return render_template("indexSide.html")
 
-@app.route("/zone")
-def zone():
-    return render_template("zone.html")
+# @app.route("/zone")
+# def zone():
+#     return render_template("zone.html")
 
 @app.route("/compressor")
 def compressor():
@@ -799,44 +799,44 @@ def compress():
 
 
 
-@app.route("/edit",methods=["GET","POST"])
-def edit():
+# @app.route("/edit",methods=["GET","POST"])
+# def edit():
 
-    if request.method == "POST":
-        operations = request.form.get("operations")
+#     if request.method == "POST":
+#         operations = request.form.get("operations")
     
-         # check if the post request has the file part
-        if 'file' not in request.files:
-            flash('No file part')
-            return "Error ! "
+#          # check if the post request has the file part
+#         if 'file' not in request.files:
+#             flash('No file part')
+#             return "Error ! "
         
-        file = request.files['file']
+#         file = request.files['file']
 
-        if file.filename == '':
-            flash('No selected file')
-            return "No selected file "
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#         if file.filename == '':
+#             flash('No selected file')
+#             return "No selected file "
+#         if file and allowed_file(file.filename):
+#             filename = secure_filename(file.filename)
+#             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            ProcessImage(filename,operations)
-            edited_image =f'/static/processArea/{filename}'
-            og_image = f'static/uploads/{filename}'
-            og_file = f'static/uploads/{filename}'
-            file_conversion ='/static/processArea/output.docx'
-            extension = os.path.splitext(filename)[1].lower()
+#             ProcessImage(filename,operations)
+#             edited_image =f'/static/processArea/{filename}'
+#             og_image = f'static/uploads/{filename}'
+#             og_file = f'static/uploads/{filename}'
+#             file_conversion ='/static/processArea/output.docx'
+#             extension = os.path.splitext(filename)[1].lower()
 
-        # Check file size
-            size = os.path.getsize(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#         # Check file size
+#             size = os.path.getsize(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            flash(f"Your Image has been processed and is available <a href='/static/processArea/{filename}' target='_blank' >here </a>")
-            return render_template("zone.html",edited_image= edited_image,og_image= og_image,extension=extension,size=size,og_file=og_file,file_conversion=file_conversion)
-            # return redirect("/",edited_image= edited_image,og_image= og_image)
+#             flash(f"Your Image has been processed and is available <a href='/static/processArea/{filename}' target='_blank' >here </a>")
+#             return render_template("zone.html",edited_image= edited_image,og_image= og_image,extension=extension,size=size,og_file=og_file,file_conversion=file_conversion)
+#             # return redirect("/",edited_image= edited_image,og_image= og_image)
    
 
-        # return "post request here "
+#         # return "post request here "
         
-        return render_template("index.html")
+#         return render_template("index.html")
 
 
 

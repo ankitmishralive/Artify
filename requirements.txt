@@ -22,3 +22,5 @@ deep_translator
 gtts
 easyocr
 docx2txt
+pyaspeller 
+flask-cors
