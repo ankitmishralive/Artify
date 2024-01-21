@@ -21,3 +21,4 @@ PyPDF2
 deep_translator
 gtts
 easyocr
+docx2txt
