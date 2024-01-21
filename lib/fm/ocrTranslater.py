@@ -1,9 +1,9 @@
 
 from PyPDF2 import PdfReader
 from deep_translator import GoogleTranslator
-import docx
+# import docx
 from docx2pdf import convert
-import pythoncom
+# import pythoncom
 from gtts import gTTS
 
 import os 

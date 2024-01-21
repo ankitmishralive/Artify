@@ -5,7 +5,7 @@ import shutil
 from docx2pdf import convert
 from pdf2image import convert_from_path
 from PIL import Image
-import patoolib
+# import patoolib
 import fitz  
 from zipfile import ZipFile 
 from pypdf import PdfWriter
