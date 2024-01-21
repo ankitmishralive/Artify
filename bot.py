@@ -13,7 +13,7 @@
 #     'You are welcome.',
 # ])
 
-import nltk
+# import nltk
 from nltk.chat import Chat
 from nltk.chat.util import reflections
 
