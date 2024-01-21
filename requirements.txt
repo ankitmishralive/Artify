@@ -16,4 +16,3 @@ pypdf
 pdf2docx
 pdf2image
 fitz  
-zipfile
