@@ -18,3 +18,5 @@ pdf2image
 PyMuPDF
 gunicorn
 PyPDF2
+deep_translator
+gtts
