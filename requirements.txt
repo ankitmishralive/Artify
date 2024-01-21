@@ -2,7 +2,7 @@
 nltk
 flask 
 pillow
-cv2
+opencv-python
 flask-cors
 docx2pdf
 numpy
