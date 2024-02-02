@@ -14,9 +14,11 @@
 # ])
 
 import nltk
+nltk.download('punkt')
 from nltk.chat import Chat
 from nltk.chat.util import reflections
-nltk.download('punkt')
+
+
 # Define patterns and responses
 patterns = [
     (r'Hello|Hi|Hey', ['Hello!', 'Hi there!', 'Hey!']),
